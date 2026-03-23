@@ -1,0 +1,32 @@
+---
+title: "¿Qué son los Skills?"
+description: "Workflows predefinidos que Ark ejecuta paso a paso"
+---
+
+## Concepto
+
+Un **skill** es un workflow predefinido que guía a Ark por un proceso complejo paso a paso. En lugar de dar instrucciones libres, un skill asegura que Ark siga un procedimiento estandarizado sin saltarse pasos.
+
+## Cómo se activan
+
+Desde Slack, mencionando a Ark con el prefijo `/nss:`:
+
+```
+@Ark /nss:onboarding
+```
+
+## Diferencia entre skill y mensaje libre
+
+| Mensaje libre | Skill |
+|---------------|-------|
+| `@Ark busca el contrato de X` | `@Ark /nss:onboarding` |
+| Ark responde con lo que encuentre | Ark sigue un proceso definido paso a paso |
+| Flexible, para consultas puntuales | Estructurado, para procesos del estudio |
+
+## Quién puede crear skills
+
+Los skills se gestionan en el repositorio `nss-general/nss-skills` en GitHub. Clemente y Esteban pueden agregar o modificar skills.
+
+## Modo supervisado
+
+En la v1, los skills operan en **modo supervisado**: Ark propone cada acción y espera confirmación antes de ejecutarla. Esto permite validar que el proceso funcione correctamente antes de automatizarlo por completo.

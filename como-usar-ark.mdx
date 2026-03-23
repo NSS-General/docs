@@ -1,0 +1,60 @@
+---
+title: "Cómo usar Ark"
+description: "Guía para interactuar con Ark desde Slack"
+---
+
+## ¿Qué es Ark?
+
+Ark es el agente de operaciones de NSS Abogados. Funciona como un jefe de operaciones virtual que puede ejecutar tareas, buscar información y coordinar procesos del estudio.
+
+## Cómo hablar con Ark
+
+Ark vive en Slack. Para interactuar con él:
+
+1. **Mención directa**: Escribe `@Ark` en cualquier canal seguido de tu solicitud
+2. **Mensaje directo**: Envía un DM a Ark en Slack
+
+<Note>
+Ark siempre responde en **hilos** (threads) para mantener los canales organizados.
+</Note>
+
+## Ejemplos de uso
+
+```
+@Ark ¿qué reuniones tengo hoy?
+@Ark busca el contrato de [cliente] en Drive
+@Ark crea una tarea en Asana para revisar el caso X
+@Ark ¿cuál es el estado de facturación de [cliente]?
+```
+
+## Skills (comandos especiales)
+
+Ark tiene **skills** predefinidos para procesos complejos. Se activan con el prefijo `/nss:`:
+
+```
+@Ark /nss:onboarding — Iniciar onboarding de un nuevo cliente
+```
+
+<Info>
+Los skills guían a Ark paso a paso por un proceso completo, asegurando que no se salte ningún paso.
+</Info>
+
+## Qué puede hacer Ark
+
+| Herramienta | Capacidad |
+|-------------|-----------|
+| **Slack** | Leer canales, buscar mensajes, responder en hilos |
+| **Gmail** | Leer, buscar y redactar correos |
+| **Google Calendar** | Ver agenda, crear reuniones, detectar conflictos |
+| **Google Drive** | Buscar y leer documentos |
+| **Notion** | Acceder a la wiki y bases de datos |
+| **Asana** | Crear tareas, actualizar estado, asignar personas |
+| **Piriod** | Consultar facturación y suscripciones |
+| **SII** | Consultas tributarias (con confirmación) |
+
+## Reglas importantes
+
+- Ark **siempre confirma** antes de enviar correos, mensajes o hacer cambios en sistemas externos
+- Ark **nunca da asesoría legal** a clientes — eso es responsabilidad de los abogados
+- Ark **no realiza pagos** ni transacciones financieras
+- Si Ark no sabe algo, lo dice claramente — nunca inventa respuestas

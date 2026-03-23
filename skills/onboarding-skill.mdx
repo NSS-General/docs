@@ -1,0 +1,51 @@
+---
+title: "Skill: Onboarding"
+description: "Detalle del skill /nss:onboarding"
+---
+
+## Comando
+
+```
+@Ark /nss:onboarding
+```
+
+## Qué hace
+
+Guía el proceso completo de ingreso de un nuevo cliente:
+
+1. **Intake**: Extrae datos del cliente desde email o Slack
+2. **Drive**: Crea carpeta del cliente en el portafolio correspondiente
+3. **Asana**: Crea proyecto de onboarding con tareas y checklist
+4. **NSS App**: Registra al cliente (manual por ahora)
+5. **Piriod**: Crea suscripción según el MSA
+6. **Seguimiento**: Hace follow-up de documentos pendientes
+
+## Portafolios soportados
+
+- Internacionales
+- Crypto
+- 27 Bis
+- RRHH
+- Contabilidad
+- Financiero
+- Outsourcing Laboral
+
+Cada portafolio tiene su propia lista de documentos requeridos y pasos específicos.
+
+## Modo supervisado (v1)
+
+En la versión actual, Ark presenta cada acción antes de ejecutarla:
+
+```
+Ark: Voy a crear la carpeta "Cliente X" en Drive/Portafolio Internacionales.
+     ¿Confirmas? (sí/no)
+```
+
+El usuario confirma o corrige antes de cada paso.
+
+## Cron de seguimiento
+
+Un job diario a las 9:00 AM revisa onboardings activos y reporta:
+- Documentos pendientes
+- Tareas atrasadas en Asana
+- Clientes sin suscripción en Piriod

@@ -1,0 +1,35 @@
+---
+title: "Facturación (Piriod)"
+description: "Gestión de suscripciones y cobros del estudio"
+---
+
+## Sistema de facturación
+
+NSS usa **Piriod** (piriod.com) como plataforma de facturación y gestión de suscripciones.
+
+## Estructura
+
+El estudio opera con dos entidades:
+- **NSS Limitada** — Entidad principal
+- **NSS SpA** — Entidad secundaria
+
+## Cómo funciona
+
+1. **Suscripciones**: Cada cliente tiene un plan mensual/anual según su MSA (Master Service Agreement)
+2. **Cobros**: Piriod gestiona los cobros recurrentes automáticamente
+3. **Facturación**: Las facturas se emiten a través de Piriod
+
+## Consultar estado desde Slack
+
+```
+@Ark ¿cuál es el estado de facturación de [cliente]?
+@Ark ¿cuántos clientes activos hay en Piriod?
+```
+
+## Crear suscripción (durante onboarding)
+
+Ark puede crear suscripciones en Piriod como parte del proceso de onboarding, siempre con confirmación del socio responsable.
+
+<Warning>
+Ark nunca modifica montos ni crea suscripciones sin confirmación explícita. Los valores siempre se extraen del MSA firmado.
+</Warning>
