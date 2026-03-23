@@ -1,0 +1,59 @@
+{
+  "$schema": "https://mintlify.com/schema.json",
+  "name": "NSS Abogados — Team Docs",
+  "theme": "mint",
+  "colors": {
+    "primary": "#1E3A5F",
+    "light": "#3B82F6",
+    "dark": "#1E3A5F"
+  },
+  "favicon": "/favicon.svg",
+  "navigation": [
+    {
+      "group": "Inicio",
+      "pages": [
+        "index",
+        "como-usar-ark"
+      ]
+    },
+    {
+      "group": "Operaciones",
+      "pages": [
+        "operaciones/onboarding",
+        "operaciones/facturacion",
+        "operaciones/calendario"
+      ]
+    },
+    {
+      "group": "Skills de Ark",
+      "pages": [
+        "skills/que-son-skills",
+        "skills/onboarding-skill",
+        "skills/lista-skills"
+      ]
+    },
+    {
+      "group": "Equipo",
+      "pages": [
+        "equipo/estructura",
+        "equipo/herramientas"
+      ]
+    }
+  ],
+  "anchors": [
+    {
+      "name": "Slack",
+      "url": "https://nssabogados.slack.com",
+      "icon": "hashtag"
+    }
+  ],
+  "topbarLinks": [
+    {
+      "name": "NSS Web",
+      "url": "https://nss.cl"
+    }
+  ],
+  "footerSocials": {
+    "linkedin": "https://linkedin.com/company/nss-abogados"
+  }
+}
