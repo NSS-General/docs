@@ -1,6 +1,6 @@
 ---
 title: "Facturación (Piriod)"
-description: "Gestión de suscripciones y cobros del estudio"
+description: "Gestión de suscripciones, cobros y documentos tributarios del estudio"
 ---
 
 ## Sistema de facturación
@@ -13,23 +13,61 @@ El estudio opera con dos entidades:
 - **NSS Limitada** — Entidad principal
 - **NSS SpA** — Entidad secundaria
 
-## Cómo funciona
+## Regla absoluta: Solo documentos exentos
 
-1. **Suscripciones**: Cada cliente tiene un plan mensual/anual según su MSA (Master Service Agreement)
-2. **Cobros**: Piriod gestiona los cobros recurrentes automáticamente
-3. **Facturación**: Las facturas se emiten a través de Piriod
+<Warning>
+NSS Abogados emite **únicamente documentos tributarios EXENTOS**. Jamás emitir facturas afectas ni boletas afectas. Esta regla está implementada a nivel de código.
+</Warning>
 
-## Consultar estado desde Slack
+**Documentos bloqueados:**
+- CL33 — Factura Electrónica (afecta) ❌
+- CL39 — Boleta Electrónica (afecta) ❌
+
+**Documentos permitidos:**
+- CL34 — Factura Exenta Electrónica ✅ (default)
+- CL41 — Boleta Exenta ✅
+- CL110 — Factura de Exportación ✅
+- CL61 — Nota de Crédito Electrónica ✅
+
+## Flujo obligatorio de facturación
+
+Ark sigue este flujo para cualquier operación de facturación:
+
+1. **Buscar cliente existente** — Siempre buscar por nombre o RUT antes de crear uno nuevo
+2. **Crear cliente** — Solo si la búsqueda no arroja resultados
+3. **Validar datos** — Verificar nombre, RUT y dirección completa antes de emitir
+4. **Crear factura/suscripción** — Extraer montos exactos del MSA o contrato
+5. **Confirmar con el usuario** — Nunca emitir sin aprobación explícita
+6. **Descargar PDF** — Compartir en Slack automáticamente
+
+<Note>
+Ark nunca inventa montos. Todos los valores se extraen del documento fuente (MSA, contrato, cotización). Si un dato no está claro, Ark lo marca como "PENDIENTE DE VERIFICAR".
+</Note>
+
+## Anulación de facturas
+
+En Chile, anular una factura ya emitida ante el SII significa emitir una **Nota de Crédito Electrónica (CL61)**. No existe un "void" o "delete" de facturas emitidas.
+
+**Flujo:**
+1. Emitir Nota de Crédito referenciando la factura original
+2. La NC anula total o parcialmente la factura ante el SII
+
+## Consultar desde Slack
 
 ```
 @Ark ¿cuál es el estado de facturación de [cliente]?
 @Ark ¿cuántos clientes activos hay en Piriod?
+@Ark emitir factura para [cliente] por [monto]
+@Ark anular factura N° [número]
+@Ark eliminar cliente duplicado [nombre]
 ```
 
-## Crear suscripción (durante onboarding)
+## Herramientas disponibles en Piriod
 
-Ark puede crear suscripciones en Piriod como parte del proceso de onboarding, siempre con confirmación del socio responsable.
-
-<Warning>
-Ark nunca modifica montos ni crea suscripciones sin confirmación explícita. Los valores siempre se extraen del MSA firmado.
-</Warning>
+Ark puede realizar las siguientes operaciones via API:
+- Listar, buscar, crear, editar y eliminar clientes
+- Crear suscripciones y facturas (one-time y recurrentes)
+- Finalizar y anular facturas (via Nota de Crédito)
+- Descargar PDFs de facturas
+- Registrar uso (metered billing)
+- Listar planes, productos y documentos tributarios

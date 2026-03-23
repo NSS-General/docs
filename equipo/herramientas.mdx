@@ -5,15 +5,15 @@ description: "Stack tecnológico de NSS Abogados"
 
 ## Herramientas principales
 
-| Herramienta | Uso | Acceso |
-|-------------|-----|--------|
-| **Slack** | Comunicación interna, interacción con Ark | nssabogados.slack.com |
-| **Google Workspace** | Email, Calendar, Drive, Docs | Gmail corporativo |
-| **Notion** | Wiki interna, bases de datos, documentación | notion.so |
-| **Asana** | Gestión de proyectos y tareas | asana.com |
-| **Piriod** | Facturación y suscripciones | piriod.com |
-| **NSS App** | Aplicación interna del estudio | App propia |
-| **SII** | Trámites tributarios | sii.cl |
+- **Slack** — Comunicación interna, interacción con Ark (nssabogados.slack.com)
+- **Google Workspace** — Email, Calendar, Drive, Docs (Gmail corporativo)
+- **Google Workspace CLI (`gws`)** — Operaciones avanzadas: crear carpetas, descargar adjuntos, labels, filtros
+- **Notion** — Wiki interna, bases de datos, documentación (notion.so)
+- **Asana** — Gestión de proyectos y tareas (asana.com)
+- **Piriod** — Facturación y suscripciones (piriod.com)
+- **NSS App** — Aplicación interna del estudio
+- **SII** — Trámites tributarios (sii.cl)
+- **Mintlify** — Documentación interna en team.nss.cl
 
 ## Slack — Canal principal
 
@@ -38,10 +38,38 @@ Los documentos de clientes se organizan por portafolio:
   📁 Outsourcing Laboral
 ```
 
+## Google Workspace CLI (`gws`)
+
+Además del MCP de Google Workspace, Ark usa la herramienta `gws` para operaciones avanzadas:
+
+- **Crear carpetas** en Drive
+- **Subir archivos** a Drive
+- **Descargar adjuntos** de Gmail
+- **Crear labels y filtros** en Gmail
+- **Mover archivos** entre carpetas
+
 ## Piriod — Facturación
 
 Dos entidades configuradas:
 - **NSS Limitada** — Entidad principal
 - **NSS SpA** — Entidad secundaria
 
-Las suscripciones se crean durante el onboarding según el MSA del cliente.
+Ark tiene acceso completo a Piriod via API: clientes, facturas, suscripciones, notas de crédito, PDFs, y registros de uso.
+
+<Warning>
+Solo se emiten documentos tributarios exentos. Facturas afectas (CL33) y boletas afectas (CL39) están bloqueadas a nivel de código.
+</Warning>
+
+## Integraciones MCP de Ark
+
+Ark se conecta a estos servicios via MCP (Model Context Protocol):
+
+- **slack** — Lectura y respuesta en canales
+- **google-workspace** — Gmail, Calendar, Drive
+- **notion** — Wiki y bases de datos
+- **asana** — Proyectos y tareas
+- **puppeteer** — Automatización web (SII)
+- **pinecone** — Base de conocimiento (RAG)
+- **brave-search** — Búsqueda web
+- **filesystem** — Archivos locales
+- **piriod** — Facturación (MCP custom)

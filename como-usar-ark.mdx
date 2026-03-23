@@ -25,14 +25,24 @@ Ark siempre responde en **hilos** (threads) para mantener los canales organizado
 @Ark busca el contrato de [cliente] en Drive
 @Ark crea una tarea en Asana para revisar el caso X
 @Ark ¿cuál es el estado de facturación de [cliente]?
+@Ark crea una carpeta "Cliente X" en Internacionales en Drive
+@Ark descarga el adjunto del correo de [email] y súbelo a Drive
 ```
+
+## Archivos adjuntos
+
+Puedes subir archivos (PDFs, imágenes, documentos) junto con tu mensaje a Ark. Él los descarga automáticamente y puede:
+- Leer su contenido
+- Subirlos a Google Drive
+- Moverlos a carpetas específicas
 
 ## Skills (comandos especiales)
 
-Ark tiene **skills** predefinidos para procesos complejos. Se activan con el prefijo `/nss:`:
+Ark tiene **skills** predefinidos para procesos complejos:
 
 ```
 @Ark /nss:onboarding — Iniciar onboarding de un nuevo cliente
+@Ark sync docs — Sincronizar documentación de team.nss.cl
 ```
 
 <Info>
@@ -41,16 +51,16 @@ Los skills guían a Ark paso a paso por un proceso completo, asegurando que no s
 
 ## Qué puede hacer Ark
 
-| Herramienta | Capacidad |
-|-------------|-----------|
-| **Slack** | Leer canales, buscar mensajes, responder en hilos |
-| **Gmail** | Leer, buscar y redactar correos |
-| **Google Calendar** | Ver agenda, crear reuniones, detectar conflictos |
-| **Google Drive** | Buscar y leer documentos |
-| **Notion** | Acceder a la wiki y bases de datos |
-| **Asana** | Crear tareas, actualizar estado, asignar personas |
-| **Piriod** | Consultar facturación y suscripciones |
-| **SII** | Consultas tributarias (con confirmación) |
+- **Slack** — Leer canales, buscar mensajes, responder en hilos
+- **Gmail** — Leer, buscar, redactar correos, descargar adjuntos
+- **Google Calendar** — Ver agenda, crear reuniones, detectar conflictos
+- **Google Drive** — Buscar documentos, crear carpetas, subir y mover archivos
+- **Google Workspace CLI** — Operaciones avanzadas: labels, filtros, adjuntos
+- **Notion** — Acceder a la wiki y bases de datos
+- **Asana** — Crear tareas, actualizar estado, asignar personas
+- **Piriod** — Facturación completa: clientes, facturas, suscripciones, PDFs
+- **SII** — Consultas tributarias (con confirmación)
+- **Web** — Buscar información pública
 
 ## Reglas importantes
 
@@ -58,3 +68,4 @@ Los skills guían a Ark paso a paso por un proceso completo, asegurando que no s
 - Ark **nunca da asesoría legal** a clientes — eso es responsabilidad de los abogados
 - Ark **no realiza pagos** ni transacciones financieras
 - Si Ark no sabe algo, lo dice claramente — nunca inventa respuestas
+- Ark **solo emite facturas exentas** — nunca afectas
