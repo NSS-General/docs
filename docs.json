@@ -9,40 +9,35 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Guías",
-        "groups": [
-          {
-            "group": "Inicio",
-            "pages": [
-              "index",
-              "como-usar-ark"
-            ]
-          },
-          {
-            "group": "Operaciones",
-            "pages": [
-              "operaciones/onboarding",
-              "operaciones/facturacion",
-              "operaciones/calendario"
-            ]
-          },
-          {
-            "group": "Skills de Ark",
-            "pages": [
-              "skills/que-son-skills",
-              "skills/onboarding-skill",
-              "skills/lista-skills"
-            ]
-          },
-          {
-            "group": "Equipo",
-            "pages": [
-              "equipo/estructura",
-              "equipo/herramientas"
-            ]
-          }
+        "group": "Inicio",
+        "pages": [
+          "index",
+          "como-usar-ark"
+        ]
+      },
+      {
+        "group": "Operaciones",
+        "pages": [
+          "operaciones/onboarding",
+          "operaciones/facturacion",
+          "operaciones/calendario"
+        ]
+      },
+      {
+        "group": "Skills de Ark",
+        "pages": [
+          "skills/que-son-skills",
+          "skills/onboarding-skill",
+          "skills/lista-skills"
+        ]
+      },
+      {
+        "group": "Equipo",
+        "pages": [
+          "equipo/estructura",
+          "equipo/herramientas"
         ]
       }
     ],
