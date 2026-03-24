@@ -1,30 +1,253 @@
 ---
-title: "Lista de Skills"
-description: "Todos los skills disponibles en Ark"
+title: "Skills de Ark"
+description: "Mapa visual de todas las automatizaciones disponibles"
 ---
+
+## Arquitectura de Skills
+
+```mermaid
+flowchart TD
+    A["👤 Usuario en Slack"] -->|"@Ark /nss:skill"| B["🤖 Ark Daemon"]
+    B --> C{"Detectar Skill"}
+    C -->|"onboarding"| D["📋 Onboarding"]
+    C -->|"sync docs"| E["📄 Sync Docs"]
+    C -->|"propuesta"| F["📝 Proposal Creator"]
+    C -->|"mensaje libre"| G["💬 Respuesta directa"]
+
+    D --> D1["Gmail / Slack → Intake"]
+    D1 --> D2["Drive → Carpeta"]
+    D2 --> D3["Asana → Proyecto"]
+    D3 --> D4["Piriod → Suscripción"]
+    D4 --> D5["Seguimiento diario"]
+
+    E --> E1["Leer CLAUDE.md + Skills"]
+    E1 --> E2["Actualizar .mdx"]
+    E2 --> E3["Push → Mintlify"]
+
+    style D fill:#059669,color:#fff
+    style E fill:#2563eb,color:#fff
+    style F fill:#d97706,color:#fff
+    style G fill:#6b7280,color:#fff
+```
 
 ## Skills activos
 
-- **Onboarding** — `/nss:onboarding` — Proceso completo de ingreso de nuevos clientes (supervisado)
-- **Sync Docs** — `sync docs` o `actualizar documentación` — Sincroniza team.nss.cl con el estado actual de la operación
+<CardGroup cols={2}>
+  <Card title="Onboarding" icon="user-plus" href="/skills/onboarding-skill" color="#059669">
+    `/nss:onboarding` — Ingreso completo de nuevos clientes
+  </Card>
+  <Card title="Sync Docs" icon="rotate" color="#2563eb">
+    `sync docs` — Sincroniza team.nss.cl con operación actual
+  </Card>
+</CardGroup>
 
-## Skills en desarrollo
+## Flujo de Onboarding
 
-Los siguientes skills están configurados pero aún en fase de validación:
+```mermaid
+flowchart LR
+    subgraph Intake["1️⃣ Intake"]
+        A1["Email / Slack"] --> A2["Extraer datos"]
+    end
 
-- **Auditoría contable** — Revisión y validación contable
-- **Compliance CL** — Cumplimiento normativo chileno
-- **Corporativo CL** — Derecho corporativo y societario
-- **Fintech CMF CL** — Regulación fintech ante la CMF
-- **Inmobiliario CL** — Operaciones inmobiliarias
-- **Legal Docs CL** — Generación de documentos legales
-- **Onboarding Intl** — Onboarding especializado para clientes internacionales
-- **Proposal Creator** — Creación de propuestas comerciales
-- **SII Drafting** — Borradores de presentaciones ante SII
+    subgraph Sistemas["2️⃣ Crear en sistemas"]
+        B1["📁 Drive\nCarpeta cliente"]
+        B2["📋 Asana\nProyecto + tareas"]
+        B3["👤 NSS App\nRegistro usuario"]
+        B4["💰 Piriod\nSuscripción"]
+    end
+
+    subgraph Seguimiento["3️⃣ Follow-up"]
+        C1["🔔 Cron 9AM\nDocs pendientes"]
+    end
+
+    Intake --> Sistemas --> Seguimiento
+```
+
+## Flujo de Facturación
+
+```mermaid
+flowchart TD
+    A["Solicitud de factura"] --> B{"¿Cliente existe\nen Piriod?"}
+    B -->|"Sí"| C["Usar cliente existente"]
+    B -->|"No"| D["Crear cliente nuevo"]
+    D --> C
+    C --> E{"¿Datos completos?\nNombre, RUT, Dirección"}
+    E -->|"No"| F["⚠️ Pedir datos faltantes"]
+    E -->|"Sí"| G["Crear factura CL34\n(Exenta)"]
+    G --> H["Confirmar con usuario"]
+    H --> I["Finalizar → SII"]
+    I --> J["Descargar PDF"]
+    J --> K["📎 Enviar en Slack"]
+
+    style G fill:#059669,color:#fff
+    style F fill:#dc2626,color:#fff
+```
+
+## Detalle por skill
+
+<AccordionGroup>
+  <Accordion title="📋 Onboarding — /nss:onboarding" icon="user-plus" defaultOpen>
+    **Estado:** Activo (modo supervisado)
+
+    **Trigger:** `@Ark /nss:onboarding` o mencionar "nuevo cliente" / "onboarding"
+
+    **Pasos:**
+    <Steps>
+      <Step title="Intake">
+        Extraer datos del cliente desde email o mensaje de Slack (nombre, RUT, contacto, portafolio)
+      </Step>
+      <Step title="Carpeta en Drive">
+        Crear estructura de carpetas en el portafolio correspondiente vía `gws` CLI
+      </Step>
+      <Step title="Proyecto en Asana">
+        Crear proyecto con checklist de documentos y tareas asignadas
+      </Step>
+      <Step title="Registro en NSS App">
+        Crear usuario del cliente (manual por ahora)
+      </Step>
+      <Step title="Suscripción en Piriod">
+        Crear suscripción según montos del MSA
+      </Step>
+      <Step title="Seguimiento">
+        Cron diario 9AM revisa documentos pendientes y tareas atrasadas
+      </Step>
+    </Steps>
+
+    **Portafolios:**
+
+    | Portafolio | Socio |
+    |---|---|
+    | Internacionales | Clemente |
+    | Crypto | Clemente |
+    | 27 Bis | Clemente |
+    | RRHH | Esteban |
+    | Contabilidad | Esteban |
+    | Financiero | Esteban |
+    | Outsourcing Laboral | Esteban |
+  </Accordion>
+
+  <Accordion title="📄 Sync Docs" icon="rotate">
+    **Estado:** Activo
+
+    **Trigger:** `@Ark sync docs` o `actualizar documentación`
+
+    **Qué hace:**
+    - Lee fuentes actuales: CLAUDE.md, skills, .mcp.json
+    - Compara con páginas .mdx en el repo de docs
+    - Actualiza páginas desactualizadas
+    - Push al repo → deploy automático en Mintlify
+    - Notifica cambios en Slack
+
+    **Frecuencia:** Cron 8AM y 7PM + bajo demanda
+  </Accordion>
+
+  <Accordion title="📝 Proposal Creator" icon="file-pen">
+    **Estado:** En desarrollo
+
+    **Trigger:** `@Ark /nss:propuesta` o mencionar "propuesta" / "cotización"
+
+    **Qué hará:**
+    - Generar propuestas comerciales basadas en templates del estudio
+    - Extraer datos del cliente y servicios requeridos
+    - Crear documento en Drive con formato NSS
+  </Accordion>
+
+  <Accordion title="🔍 Auditoría Contable" icon="magnifying-glass-chart">
+    **Estado:** En desarrollo
+
+    Revisión y validación contable para clientes del portafolio de Contabilidad.
+  </Accordion>
+
+  <Accordion title="⚖️ Compliance CL" icon="scale-balanced">
+    **Estado:** En desarrollo
+
+    Verificación de cumplimiento normativo chileno.
+  </Accordion>
+
+  <Accordion title="🏢 Corporativo CL" icon="building">
+    **Estado:** En desarrollo
+
+    Derecho corporativo y societario — constitución, reformas, actas.
+  </Accordion>
+
+  <Accordion title="💳 Fintech CMF CL" icon="credit-card">
+    **Estado:** En desarrollo
+
+    Regulación fintech ante la Comisión para el Mercado Financiero.
+  </Accordion>
+
+  <Accordion title="🏠 Inmobiliario CL" icon="house">
+    **Estado:** En desarrollo
+
+    Operaciones inmobiliarias — compraventa, arriendos, due diligence.
+  </Accordion>
+
+  <Accordion title="📑 Legal Docs CL" icon="file-contract">
+    **Estado:** En desarrollo
+
+    Generación automática de documentos legales desde templates.
+  </Accordion>
+
+  <Accordion title="🌎 Onboarding Intl" icon="globe">
+    **Estado:** En desarrollo
+
+    Onboarding especializado para clientes internacionales — documentos apostillados, visas, compliance cross-border.
+  </Accordion>
+
+  <Accordion title="🏛️ SII Drafting" icon="landmark">
+    **Estado:** En desarrollo
+
+    Borradores de presentaciones y consultas ante el Servicio de Impuestos Internos.
+  </Accordion>
+</AccordionGroup>
+
+## Herramientas que usa cada skill
+
+```mermaid
+graph LR
+    subgraph Skills
+        S1["Onboarding"]
+        S2["Sync Docs"]
+        S3["Facturación"]
+    end
+
+    subgraph MCP["MCP Servers"]
+        M1["Slack"]
+        M2["Google Workspace"]
+        M3["Asana"]
+        M4["Piriod"]
+        M5["Filesystem"]
+    end
+
+    subgraph CLI
+        C1["gws CLI"]
+        C2["git"]
+    end
+
+    S1 --> M1 & M2 & M3 & M4 & C1
+    S2 --> M5 & C2
+    S3 --> M1 & M4
+
+    style S1 fill:#059669,color:#fff
+    style S2 fill:#2563eb,color:#fff
+    style S3 fill:#d97706,color:#fff
+```
 
 ## Cómo solicitar un nuevo skill
 
-Habla con Clemente o Esteban. Los skills se definen en el repositorio `nss-general/nss-skills` y requieren:
-- Archivo de definición (SKILL.md)
-- Templates si aplica
-- Pruebas en modo supervisado antes de activar
+Habla con Clemente o Esteban. Los skills se definen en `nss-general/nss-skills` y requieren:
+
+<Steps>
+  <Step title="Definición">
+    Crear archivo SKILL.md con el proceso paso a paso
+  </Step>
+  <Step title="Templates">
+    Agregar templates de documentos si aplica
+  </Step>
+  <Step title="Testing">
+    Probar en modo supervisado antes de activar
+  </Step>
+  <Step title="Activación">
+    Agregar trigger en el daemon y documentar en team.nss.cl
+  </Step>
+</Steps>
