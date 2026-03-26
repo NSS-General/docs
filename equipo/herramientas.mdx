@@ -21,6 +21,27 @@ Slack es la herramienta central de comunicación. Ark opera desde Slack y respon
 
 **Regla clave**: Todas las conversaciones van en **hilos** (threads), nunca mensajes sueltos al canal.
 
+## Gmail — Acceso Multi-Bandeja
+
+Ark tiene acceso a las bandejas de correo de todo el equipo via delegación de dominio de Google Workspace.
+
+**Reglas de acceso:**
+
+- Cada persona solo puede usar a Ark para leer **su propia bandeja**. Ark identifica al usuario por su perfil de Slack.
+- Ark puede **leer correos** y **crear borradores** en la bandeja del usuario que lo invoca.
+- Ark **nunca envía** correos desde la bandeja de otra persona.
+- **Clemente** puede pedir acceso a cualquier bandeja (excepción de Managing Partner).
+- Ark siempre informa en el hilo de Slack qué bandeja consultó.
+
+**Ejemplos:**
+```
+@Ark busca el correo de Kellu en mi bandeja
+→ Ark lee la bandeja del usuario que escribió el mensaje
+
+@Ark crea un draft de respuesta para el correo de X
+→ Ark crea borrador en la bandeja del usuario, nunca envía
+```
+
 ## Google Drive — Estructura
 
 Los documentos de clientes se organizan por portafolio:
@@ -48,17 +69,21 @@ Además del MCP de Google Workspace, Ark usa la herramienta `gws` para operacion
 - **Crear labels y filtros** en Gmail
 - **Mover archivos** entre carpetas
 
-## Piriod — Facturación
+## Piriod — Facturación (25 herramientas)
 
 Dos entidades configuradas:
 - **NSS Limitada** — Entidad principal
 - **NSS SpA** — Entidad secundaria
 
-Ark tiene acceso completo a Piriod via API: clientes, facturas, suscripciones, notas de crédito, PDFs, y registros de uso.
+Ark tiene acceso completo a Piriod via API:
+- **Clientes**: listar, buscar, crear, editar, eliminar
+- **Facturas**: crear (one-time), finalizar, anular, descargar PDF
+- **Suscripciones**: crear, listar, consultar
+- **Notas de Crédito**: crear, finalizar, descargar PDF
+- **Uso**: registrar consumo en suscripciones medidas
+- **Catálogo**: planes, productos, documentos tributarios
 
-<Warning>
-Solo se emiten documentos tributarios exentos. Facturas afectas (CL33) y boletas afectas (CL39) están bloqueadas a nivel de código.
-</Warning>
+> ⚠️ Solo se emiten documentos tributarios **exentos**. Facturas afectas (CL33) y boletas afectas (CL39) están bloqueadas a nivel de código.
 
 ## Integraciones MCP de Ark
 
@@ -72,4 +97,4 @@ Ark se conecta a estos servicios via MCP (Model Context Protocol):
 - **pinecone** — Base de conocimiento (RAG)
 - **brave-search** — Búsqueda web
 - **filesystem** — Archivos locales
-- **piriod** — Facturación (MCP custom)
+- **piriod** — Facturación (MCP custom, 25 tools)
