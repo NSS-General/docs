@@ -1,0 +1,99 @@
+---
+title: "Skill: Migratorio"
+description: "Visa sujeta a contrato de trabajo — proceso completo"
+---
+
+## Comando
+
+```
+@Ark /nss:migratorio
+```
+
+Trigger automático: "visa", "migración", "SERMIG", "ATPT", "permiso de residencia", "extranjero"
+
+---
+
+## Servicio
+
+**Permiso de Residencia Temporal sujeto a contrato de trabajo** ante el SERMIG (Servicio Nacional de Migraciones).
+
+- Duración: 2 años, prorrogable por 2 años más
+- Después de 4 años: puede optar a residencia definitiva
+- Tiempo de resolución actual: ~10 meses
+
+---
+
+## Dos vías
+
+### Vía 1 — Desde fuera de Chile (Residencia Temporal)
+
+El trabajador solicita desde el extranjero. Permite residir y trabajar en Chile por 2 años.
+
+### Vía 2 — Desde dentro de Chile (ATPT)
+
+El trabajador ingresa como turista y solicita una **Autorización de Trabajo para Titulares de Permiso de Residencia Transitoria**. Permite trabajar por 90 días (prorrogable 90 días más).
+
+> ⚠️ Cada vía requiere un **contrato de trabajo distinto**. El RUT obtenido vía ATPT solo sirve para cotizaciones.
+
+---
+
+## Costos
+
+| Concepto | Monto |
+|----------|-------|
+| Honorarios NSS | USD 1.200 |
+| Gastos de envío y notaría | USD 200 aprox. |
+| Tasa migratoria (Residencia Temporal) | Según nacionalidad |
+| Tasa migratoria (ATPT) | 1.5x tasa de residencia temporal |
+| Prórroga Residencia Transitoria | USD 100 |
+
+---
+
+## Flujo del proceso
+
+```
+ 1️⃣ INTAKE             2️⃣ DOCUMENTOS          3️⃣ PRESENTACIÓN      4️⃣ SEGUIMIENTO
+ ──────────            ─────────────          ────────────────      ──────────────
+ Datos cliente    ──▶  Recopilar docs    ──▶  Ingresar SERMIG  ──▶  Cron semanal
+ Datos empleador       Apostillar              N° solicitud         Alertas plazos
+ ¿Dentro o fuera?      Contrato trabajo        Notificar            90d / 2 años
+ Definir vía           Pago tasas              cliente              Estado SERMIG
+```
+
+## Documentos requeridos
+
+**Vía 1 (desde fuera):**
+- Pasaporte vigente (copia legalizada)
+- Antecedentes penales (apostillados)
+- Certificado de nacimiento (apostillado)
+- Contrato de trabajo (formato residencia temporal)
+- Poder notarial (si aplica)
+- Formulario SERMIG + pago tasa
+
+**Vía 2 (ATPT, desde dentro):**
+- Pasaporte con sello de turista
+- Tarjeta de turismo PDI
+- Contrato de trabajo (formato ATPT)
+- Certificado antecedentes empleador
+- Formulario ATPT + pago tasa (1.5x)
+
+---
+
+## Alertas automáticas
+
+- ATPT: **15 días antes** de vencer los 90 días
+- Prórroga turista: **20 días antes** de los 90 días
+- Residencia Temporal: **30 días antes** de los 2 años
+
+---
+
+## Equipo responsable
+
+- **Nico Gajardo S.** — Especialista migratorio
+- **Clemente Hernandez** — Supervisión general
+
+## Facturación
+
+- Entidad: NSS Limitada
+- Documento: CL34 (Factura Exenta)
+- Moneda: USD → CLP con dólar observado SII
