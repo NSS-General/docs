@@ -1,0 +1,123 @@
+---
+title: "27 Bis — Devolución de IVA"
+description: "Proceso completo de recuperación de IVA por inversión en activo fijo inmobiliario"
+---
+
+## Comando
+
+```
+@Ark /nss:27bis
+```
+
+Trigger: "27 bis", "devolución de IVA", "activo fijo", "arriendo amoblado", "F3280"
+
+---
+
+## Servicio
+
+**Art. 27 bis Ley de IVA**: Devolución del IVA pagado en la compra de inmuebles para arriendo amoblado (activo fijo). Aplica desde la **3ra propiedad DFL2** en adelante.
+
+---
+
+## 7 Fases del proceso
+
+```
+ 1️⃣ INTAKE      2️⃣ PROPUESTA    3️⃣ ONBOARDING   4️⃣ DOCUMENTOS
+ ──────────     ──────────      ──────────────   ─────────────
+ Calificar  ──▶ PDF + fees ──▶  Typeform     ──▶ 13 docs por
+ ¿3+ DFL2?      DocuSign        Clave SII        propiedad
+ Meeting        Follow-up       $550k CLP        Amoblado
+                3 y 7 días      Carpeta Drive    Checklist
+
+ 5️⃣ SII         6️⃣ FISCALIZACIÓN  7️⃣ FONDOS
+ ──────────     ────────────────   ──────────
+ F3280      ──▶ Fiscalizadora ──▶  Tesorería
+ Balances       Requerimientos     Liberación
+ Patente        RAV si rechazo     Compliance
+                90 días hábiles    F29/F50/Renta
+```
+
+---
+
+## Calificación del lead
+
+> ⚠️ Si el cliente tiene menos de 3 propiedades DFL2, 27 Bis **NO aplica**. Las primeras 2 están exentas de IVA.
+
+Preguntas obligatorias:
+1. ¿Cuántas propiedades DFL2 tiene? (≥3 requerido)
+2. ¿Persona natural o sociedad?
+3. ¿Financiamiento? (Efectivo/crédito/mixto)
+4. ¿Ya compró o está pendiente?
+5. ¿Valor estimado en UF?
+
+---
+
+## Costos
+
+| Concepto | Monto |
+|----------|-------|
+| Setup inicial | $550.000 CLP (a todo evento) |
+| Éxito (estándar) | 12.5% del IVA recuperado |
+| Éxito (volumen, 8+ dptos) | 10% |
+| Contabilidad mensual (EI) | 3 UF/mes |
+| Operación Renta anual | 15 UF/año |
+| Domicilio tributario | 3 UF/año (desde mes 13) |
+
+---
+
+## 13 documentos por propiedad
+
+1. Promesa de Compraventa
+2. Comprobantes pago pie
+3. Escritura de Compraventa
+4. Factura de compra inmueble
+5. Inscripción CBR
+6. Tabla amortización crédito hipotecario (PDF original)
+7. Documentos crédito hipotecario (set 1)
+8. Documentos crédito hipotecario (set 2)
+9. Facturas y boletas de muebles (comprados con cuenta EI)
+10. Boletas de servicios (agua, luz — desde mes de adquisición)
+11. Comprobantes gastos comunes
+12. Contrato de arrendamiento amoblado
+13. Fotos inmueble amoblado
+
+---
+
+## Automatizaciones
+
+- **Onboarding**: `@Ark onboarding 27bis [nombre]` — crea carpeta Drive (13 subcarpetas), proyecto Asana, label Gmail, envía email de bienvenida
+- **Monitor docs**: Cron semanal — reporta documentos pendientes por cliente al analista
+- **Alertas SII**: Cron diario — plazos de requerimientos, RAV, y liberación de fondos
+- **Status**: `@Ark status 27bis` — resumen del portafolio completo
+- **Facturar éxito**: `@Ark facturar 27bis [cliente] éxito` — calcula fee y emite en Piriod
+
+---
+
+## Equipo
+
+| Persona | Rol |
+|---------|-----|
+| Clemente Hernandez | Partner, lead (fases 1-2) |
+| Esteban Sáez | Partner, apoyo intake |
+| Tomás Fernández | Abogado, reuniones clientes |
+| Javiera Huaiquimil | Contadora auditora (fases 3-7) |
+| Catalina Barría | Analista "Cata" (docs, seguimiento) |
+| Nadia Peñailillo | Analista "Nadia" (docs, seguimiento) |
+| Francisca Valenzuela | Legal (RAV, recursos) |
+
+---
+
+## Timeline típico
+
+| Fase | Duración |
+|------|----------|
+| Intake → propuesta | Mismo día |
+| Aceptación → onboarding | 1-7 días |
+| Recopilación documentos | 2-8 semanas |
+| Presentación SII (F3280) | Post documentos |
+| Fiscalización SII | 2-6 meses |
+| Resolución inicial | 3-6 meses |
+| RAV (si rechazo) | ~4 meses |
+| Liberación fondos | 1-6+ meses |
+| **Total mejor caso** | **6-9 meses** |
+| **Total con RAV** | **12-18+ meses** |
