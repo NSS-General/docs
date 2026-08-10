@@ -10,6 +10,20 @@ Estrategia Steps del 04-08-2026. Preparado el 08-08-2026.
 > REGISTRO.md de ese repo, que es la copia viva de este plan). La base Postgres
 > corre en Supabase con la migración inicial y el seed aplicados. D5 quedó
 > resuelta: `nss-skills` ya está habilitado para la App.
+>
+> **Actualización 10-08-2026 (al crear este PR):** el plan ya se ejecutó más
+> allá de F0. Estado real: plataforma desplegada en Vercel
+> (nss-flow.vercel.app, diseño oficial NSS, 43 prospectos reales), login
+> Google con lista cerrada (esaez@ y chernandez@) implementado, e ingesta
+> de tres fuentes construida — resúmenes de Gemini + Calendar (base de
+> cotizaciones con cita textual, páginas /cotizaciones y detalle por
+> cliente), API de Vambe (mapa de etapas por ID con chequeo REG-005) y
+> formularios Webflow vía correo. Decisiones que este plan dejaba abiertas
+> y ya se resolvieron sobre la marcha: D1 (OAuth individual por socio,
+> «Conectar mi Google»), D2 (Vercel + Supabase, no Cloud Run), D3 (Google
+> OAuth con allowlist por correo). Siguen abiertas D4 (cifrado en reposo,
+> Clemente), D6–D9. Este documento queda como registro del plan aprobado;
+> la verdad viva está en `NSS-General/nss-flow`.
 
 ---
 
