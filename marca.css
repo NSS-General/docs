@@ -1,0 +1,5 @@
+/* Marca NSS: titulares en Mona Sans 500, nunca más pesados */
+#page-title,
+#content h1, #content h2, #content h3, #content h4 {
+  font-weight: 500 !important;
+}
