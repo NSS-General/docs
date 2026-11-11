@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "NSS Abogados — Team Docs",
+  "name": "NSS Legal & Tax",
   "colors": {
     "primary": "#472F68",
     "light": "#B59CE6",
@@ -28,57 +28,71 @@
   },
   "favicon": "/favicon.svg",
   "navigation": {
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Slack",
-          "href": "https://nssabogados.slack.com",
-          "icon": "hashtag"
-        }
-      ]
-    },
-    "groups": [
+    "tabs": [
       {
-        "group": "Inicio",
-        "pages": [
-          "index",
-          "como-usar-ark"
+        "tab": "Clientes",
+        "icon": "circle-play",
+        "groups": [
+          {
+            "group": "Primeros pasos",
+            "public": true,
+            "pages": [
+              "index",
+              "app/como-entrar-a-la-app"
+            ]
+          },
+          {
+            "group": "Contabilidad",
+            "public": true,
+            "pages": [
+              "app/modulo-contabilidad",
+              "app/conectar-banco-fintoc",
+              "app/respaldar-pago-sin-factura"
+            ]
+          }
         ]
       },
       {
-        "group": "App NSS",
-        "pages": [
-          "app/como-entrar-a-la-app"
-        ]
-      },
-      {
-        "group": "Operaciones",
-        "pages": [
-          "operaciones/onboarding",
-          "operaciones/facturacion",
-          "operaciones/calendario"
-        ]
-      },
-      {
-        "group": "Legal",
-        "pages": [
-          "legal/27bis",
-          "legal/migratorio"
-        ]
-      },
-      {
-        "group": "Skills de Ark",
-        "pages": [
-          "skills/que-son-skills",
-          "skills/onboarding-skill",
-          "skills/lista-skills"
-        ]
-      },
-      {
-        "group": "Equipo",
-        "pages": [
-          "equipo/estructura",
-          "equipo/herramientas"
+        "tab": "Equipo NSS",
+        "icon": "lock",
+        "groups": [
+          {
+            "group": "Inicio",
+            "pages": [
+              "interno",
+              "como-usar-ark"
+            ]
+          },
+          {
+            "group": "Operaciones",
+            "pages": [
+              "operaciones/onboarding",
+              "operaciones/facturacion",
+              "operaciones/calendario"
+            ]
+          },
+          {
+            "group": "Legal",
+            "pages": [
+              "legal/27bis",
+              "legal/migratorio"
+            ]
+          },
+          {
+            "group": "Skills de Ark",
+            "pages": [
+              "skills/que-son-skills",
+              "skills/onboarding-skill",
+              "skills/lista-skills"
+            ]
+          },
+          {
+            "group": "Equipo",
+            "pages": [
+              "equipo/estructura",
+              "equipo/herramientas"
+            ]
+          }
         ]
       }
     ]
@@ -89,7 +103,12 @@
         "label": "NSS Web",
         "href": "https://nss.cl"
       }
-    ]
+    ],
+    "primary": {
+      "type": "button",
+      "label": "Entrar a la App",
+      "href": "https://app.nss.cl"
+    }
   },
   "footer": {
     "socials": {
