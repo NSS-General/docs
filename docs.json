@@ -4,13 +4,13 @@
   "name": "NSS Legal & Tax",
   "colors": {
     "primary": "#472F68",
-    "light": "#B59CE6",
+    "light": "#9B7DC4",
     "dark": "#472F68"
   },
   "background": {
     "color": {
       "light": "#FAF9FC",
-      "dark": "#191526"
+      "dark": "#141210"
     }
   },
   "logo": {
@@ -26,7 +26,10 @@
       "family": "Inter"
     }
   },
-  "favicon": "/favicon.svg",
+  "favicon": {
+    "light": "/favicon.svg",
+    "dark": "/favicon-dark.svg"
+  },
   "navigation": {
     "tabs": [
       {
