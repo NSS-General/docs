@@ -1,0 +1,55 @@
+---
+title: "Conoce el Conciliador"
+description: "Recorre las nueve ventanas del Conciliador: el Dashboard, Banco, Ingresos y Egresos."
+icon: "compass"
+keywords: ["conciliador", "conciliación bancaria", "dashboard", "movimientos", "cuentas por cobrar", "otros ingresos", "gastos", "registro de ventas", "registro de compras"]
+---
+
+<video
+  controls
+  playsInline
+  preload="metadata"
+  poster="/images/app/tutorial-conciliador-portada.jpg"
+  className="w-full aspect-video rounded-xl"
+  src="/videos/tutorial-conciliador.mp4"
+>
+  Tu navegador no puede reproducir este video. Puedes <a href="/videos/tutorial-conciliador.mp4">descargarlo aquí</a>.
+</video>
+
+El Conciliador cruza los movimientos de tu banco con tus facturas, gastos e ingresos. Lo encuentras en **Contabilidad › Conciliador**. Arriba tiene cuatro pestañas, **Dashboard**, **Banco**, **Ingresos** y **Egresos**, y cada una se abre en sus ventanas.
+
+| Ventana | Qué encuentras |
+| --- | --- |
+| Dashboard | El resumen de tu empresa: el saldo de tu cuenta corriente, lo que tienes por cobrar y por pagar, cuántos días tardan tus clientes en pagarte, tus ingresos y egresos, el resultado operacional, el flujo de caja y quiénes te deben. |
+| Banco › Movimientos | Cada cargo y abono de tus cuentas, con su estado de conciliación. |
+| Banco › Cuentas | Tus cuentas conectadas, con su saldo y su última sincronización. |
+| Ingresos › Registro de Ventas | Las facturas que emites, tal como están en el SII, y cuáles ya se pagaron en tu banco. |
+| Ingresos › Cuentas por Cobrar | Las facturas de venta emitidas que todavía no se concilian. |
+| Ingresos › Otros Ingresos | Los ingresos que no vienen de una factura de venta, con su respaldo. |
+| Egresos › Registro de Compras | Las facturas de tus proveedores, tal como están en el SII, y cuáles ya pagaste. |
+| Egresos › Gastos | Tus pagos sin factura, como compras con boleta o voucher, con su respaldo. |
+
+Cada movimiento y cada documento muestra su estado:
+
+- **Conciliado**: ya está cruzado con lo que lo paga o lo cobra.
+- **Conciliar**: todavía no tiene nada asociado.
+- **Parcial**: está cruzado solo en parte; debajo ves el saldo pendiente.
+
+<Tip>
+  En la barra de arriba ves cuánto llevas conciliado este mes.
+</Tip>
+
+<Note>
+  En el Dashboard, la proyección del flujo de caja está en beta: estima los próximos tres meses con lo que tienes por cobrar y por pagar, según su fecha de vencimiento.
+</Note>
+
+## Sigue con
+
+<Columns cols={2}>
+  <Card title="Concilia con sugerencias" icon="sparkles" href="/app/concilia-con-sugerencias">
+    El Conciliador te propone con qué documento va cada movimiento.
+  </Card>
+  <Card title="Concilia a mano" icon="hand" href="/app/concilia-a-mano">
+    Elige tú lo que paga o cobra cada movimiento.
+  </Card>
+</Columns>

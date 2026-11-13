@@ -1,0 +1,53 @@
+---
+title: "Concilia con sugerencias"
+description: "Aprueba o descarta las sugerencias del Conciliador y aprueba de una vez las de alta coincidencia."
+icon: "sparkles"
+keywords: ["sugerencias", "conciliar", "aprobar", "descartar", "sugerencias seguras", "coincidencia", "conciliador", "movimientos"]
+---
+
+<video
+  controls
+  playsInline
+  preload="metadata"
+  poster="/images/app/tutorial-sugerencias-portada.jpg"
+  className="w-full aspect-video rounded-xl"
+  src="/videos/tutorial-sugerencias.mp4"
+>
+  Tu navegador no puede reproducir este video. Puedes <a href="/videos/tutorial-sugerencias.mp4">descargarlo aquí</a>.
+</video>
+
+El Conciliador te propone con qué documento va cada movimiento. Tú solo revisas y apruebas.
+
+<Steps>
+  <Step title="Abre Sugerencias">
+    En el menú de la App, abre **Contabilidad › Conciliador › Banco › Movimientos** y haz clic en la pestaña **Sugerencias**. El número junto a la pestaña te dice cuántas tienes pendientes.
+  </Step>
+  <Step title="Revisa y aprueba">
+    Cada fila muestra el movimiento, el documento con el que se concilia, el % de coincidencia y el motivo, por ejemplo "Monto exacto y el RUT de la contraparte coincide".
+
+    Si está bien, haz clic en el botón del check para **aprobarla**. Si no corresponde, haz clic en la **X** para descartarla: el movimiento sigue por conciliar y lo resuelves a mano.
+  </Step>
+  <Step title="Aprueba las seguras de una vez">
+    Haz clic en **Aprobar sugerencias seguras**, revisa la lista y haz clic en **Aprobar todas**. Se aprueban las que tienen 95% de coincidencia o más.
+  </Step>
+</Steps>
+
+Al terminar ves un resumen con cuántas sugerencias se aprobaron y cuánto tiempo te ahorraste.
+
+<Tip>
+  También puedes ver las sugerencias de un movimiento desde su fila: pasa el cursor por la estrella junto a **Conciliar**.
+</Tip>
+
+## Problemas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Una sugerencia trae una advertencia">
+    Aparece cuando la glosa del movimiento menciona otro folio u otra contraparte que también tiene un documento por ese monto. Revísala con cuidado antes de aprobarla.
+  </Accordion>
+  <Accordion title="Aprobé una sugerencia por error">
+    En **Movimientos**, abre el menú **···** de la fila y elige **Desconciliar**. El movimiento vuelve a quedar pendiente y los documentos que saldaba vuelven a estar disponibles.
+  </Accordion>
+  <Accordion title="Un movimiento no tiene sugerencias">
+    Concílialo a mano: revisa [Concilia a mano](/app/concilia-a-mano).
+  </Accordion>
+</AccordionGroup>
