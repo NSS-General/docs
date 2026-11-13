@@ -45,8 +45,17 @@
             "group": "Contabilidad",
             "public": true,
             "pages": [
-              "app/modulo-contabilidad",
+              "app/modulo-contabilidad"
+            ]
+          },
+          {
+            "group": "Conciliador",
+            "public": true,
+            "pages": [
+              "app/conoce-el-conciliador",
               "app/conectar-banco-fintoc",
+              "app/concilia-con-sugerencias",
+              "app/concilia-a-mano",
               "app/respaldar-pago-sin-factura"
             ]
           }

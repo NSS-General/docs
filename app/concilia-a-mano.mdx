@@ -1,0 +1,53 @@
+---
+title: "Concilia a mano"
+description: "Elige tú lo que paga o cobra un movimiento, guarda la conciliación y concilia parcialmente cuando falta una parte."
+icon: "hand"
+keywords: ["conciliar", "conciliación manual", "guardar conciliación", "conciliar parcialmente", "saldo por asignar", "conciliador", "movimientos"]
+---
+
+<video
+  controls
+  playsInline
+  preload="metadata"
+  poster="/images/app/tutorial-conciliar-a-mano-portada.jpg"
+  className="w-full aspect-video rounded-xl"
+  src="/videos/tutorial-conciliar-a-mano.mp4"
+>
+  Tu navegador no puede reproducir este video. Puedes <a href="/videos/tutorial-conciliar-a-mano.mp4">descargarlo aquí</a>.
+</video>
+
+Cuando un movimiento no tiene sugerencias, o quieres elegir tú con qué se concilia, hazlo a mano.
+
+<Steps>
+  <Step title="Abre Conciliar">
+    En **Contabilidad › Conciliador › Banco › Movimientos**, haz clic en **Conciliar** en la fila del movimiento. También puedes seleccionarla con las flechas y apretar Enter.
+  </Step>
+  <Step title="Agrega lo que paga">
+    A la derecha, busca el documento en las pestañas: **Sugeridos**, **Documentos SII**, **Impuestos**, **RR.HH.**, **Gastos**, **Otros Ingresos** o **Movimientos**. Puedes buscar por texto o por el monto exacto.
+
+    Haz clic en **+** para agregarlo. Si un pago cubre varios documentos, agrega todos los que correspondan.
+  </Step>
+  <Step title="Guarda">
+    Cuando el **Saldo por asignar** llega a $0, haz clic en **Guardar conciliación**. El panel pasa solo al siguiente movimiento por conciliar.
+  </Step>
+</Steps>
+
+Si lo que agregas no cubre todo el movimiento, haz clic en **Conciliar parcialmente**: el movimiento queda **Parcial** y ves el saldo pendiente para conciliarlo después.
+
+<Tip>
+  Atajos del panel: **⌘ ⏎** para guardar, **⌥ ↑** y **⌥ ↓** para pasar al movimiento anterior o siguiente, y **⌘ Z** para deshacer lo último que agregaste.
+</Tip>
+
+## Problemas frecuentes
+
+<AccordionGroup>
+  <Accordion title="¿Puedo conciliar partiendo por una factura?">
+    Sí. En **Ingresos › Registro de Ventas** o en **Egresos › Registro de Compras**, haz clic en **Conciliar** en la fila de la factura. Se abre el mismo panel, con los movimientos del banco para elegir.
+  </Accordion>
+  <Accordion title="Me equivoqué en una conciliación">
+    En **Movimientos**, abre el menú **···** de la fila y elige **Desconciliar**. El movimiento vuelve a quedar pendiente y los documentos que saldaba vuelven a estar disponibles.
+  </Accordion>
+  <Accordion title="No puedo modificar una conciliación">
+    Si la conciliación tiene un traspaso a cuenta contable, la hizo el equipo de NSS. Escríbenos si necesitas cambiarla.
+  </Accordion>
+</AccordionGroup>
