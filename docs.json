@@ -45,13 +45,6 @@
             ]
           },
           {
-            "group": "Contabilidad",
-            "public": true,
-            "pages": [
-              "app/modulo-contabilidad"
-            ]
-          },
-          {
             "group": "Conciliador",
             "public": true,
             "pages": [
@@ -126,5 +119,11 @@
     "socials": {
       "linkedin": "https://linkedin.com/company/nss-abogados"
     }
-  }
+  },
+  "redirects": [
+    {
+      "source": "/app/modulo-contabilidad",
+      "destination": "/app/conoce-el-conciliador"
+    }
+  ]
 }
