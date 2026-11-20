@@ -1,0 +1,43 @@
+---
+title: "Importa una cartola"
+description: "Sube la cartola en PDF de una cuenta manual y revisa los movimientos que la App creó."
+icon: "upload"
+iconType: "light"
+keywords: ["cartola", "importar cartola", "cuenta manual", "pdf", "movimientos", "bancos y movimientos", "ya importado", "saldo de la cartola"]
+pantallas: ["/reconciliation/bank/accounts/:accountId/statement-imports/:importId"]
+app_al: "2026-11-19"
+---
+
+Si una cuenta no está conectada por Fintoc, sube su cartola en PDF y la App crea los movimientos.
+
+<Info>
+  Lo hacen los usuarios con el permiso **Conciliación**. Solo funciona en cuentas manuales: las conectadas por Fintoc se sincronizan solas.
+</Info>
+
+<Steps>
+  <Step title="Crea una cuenta manual">
+    En **Finanzas › Bancos y movimientos › Cuentas**, haz clic en **Agregar cuenta o tarjeta** y elige **Cuenta manual**. Completa la institución y el tipo, la moneda, el nombre y el titular, y haz clic en **Crear**.
+  </Step>
+  <Step title="Importa la cartola">
+    Haz clic en **Importar Cartolas**. Está en **Cuentas** y en **Movimientos**, y aparece cuando tienes una cuenta manual. Arrastra uno o más PDF (hasta 20 MB cada uno), elige la cuenta de cada archivo y haz clic en **Importar**.
+  </Step>
+  <Step title="Revisa el resultado">
+    La App dice cuántos movimientos creó y cuántos ya estaban importados. Haz clic en **Ver cartola** para abrir el detalle.
+  </Step>
+</Steps>
+
+En el detalle ves la **Cartola** a la izquierda y los **Movimientos creados** a la derecha, para compararlos línea por línea. Arriba, el resumen muestra **Creados**, **Ya importados**, **Período**, **Saldo de la cartola** y quién la importó. Con **Descargar** bajas el PDF original.
+
+## Problemas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Un archivo quedó omitido">
+    Solo se aceptan PDF de hasta 20 MB.
+  </Accordion>
+  <Accordion title="Dice «No pudimos leer esta cartola»">
+    Revisa el archivo e inténtalo de nuevo. En el detalle, la insignia dice **Fallida** y se ve el motivo.
+  </Accordion>
+  <Accordion title="Un movimiento dice «Ya importado»">
+    Ese movimiento venía de una cartola anterior que se traslapa con esta. No se duplica.
+  </Accordion>
+</AccordionGroup>

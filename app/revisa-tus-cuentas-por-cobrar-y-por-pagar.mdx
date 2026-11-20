@@ -1,0 +1,50 @@
+---
+title: "Revisa tus cuentas por cobrar y por pagar"
+description: "Mira tus facturas de venta y de compra, filtra por estado y concilia cada una con el pago de tu banco."
+icon: "arrow-right-arrow-left"
+iconType: "light"
+keywords: ["cuentas por cobrar", "cuentas por pagar", "registro de ventas", "registro de compras", "otros ingresos", "facturas", "no conciliados", "conciliado", "parcial", "anulada", "total no conciliado"]
+pantallas: ["/reconciliation/inflows/sales", "/reconciliation/outflows/purchases", "/reconciliation/inflows/other-incomes"]
+app_al: "2026-11-19"
+---
+
+Aquí ves lo que te deben y lo que debes, y qué facturas ya tienen su pago en el banco.
+
+<Info>
+  Las ven los usuarios con el permiso **Conciliación**.
+</Info>
+
+<Steps>
+  <Step title="Elige la sección">
+    En **Finanzas**, abre **Cuentas por cobrar** (tus ventas) o **Cuentas por pagar** (tus compras). Se abre el registro de facturas: **Registro de Ventas** o **Registro de Compras**.
+  </Step>
+  <Step title="Cambia de registro">
+    Haz clic en el título de la tabla. Desde **Registro de Ventas** pasas a **Otros Ingresos**; desde **Registro de Compras**, a **Gastos**.
+  </Step>
+  <Step title="Filtra por estado">
+    Arriba de la tabla hay pestañas: **Todos**, **Conciliados**, **Pendientes**, **Parciales** y **No Conciliados**. Se abre en **No Conciliados**, que junta **Pendientes** y **Parciales**. La tarjeta **Total No Conciliado** suma lo que falta (incluye IVA). También puedes usar **Filtrar** o buscar por nombre, RUT, folio o monto exacto.
+  </Step>
+  <Step title="Mira el estado de cada documento">
+    - **Conciliado**: ya está cruzado con un movimiento del banco.
+    - **Conciliar**: todavía no tiene nada asociado. Haz clic para elegir el movimiento.
+    - **Parcial**: está cruzado en parte; debajo ves el monto pendiente.
+    - **Anulada**: el documento fue anulado y no se concilia.
+  </Step>
+</Steps>
+
+Cada fila del registro trae **Fecha**, **Tipo**, **Folio**, **Cliente** o **Proveedor**, **Monto** y **Estado**. Las facturas llegan solas, tal como están en el SII.
+
+**Otros Ingresos** es lo que no viene de una factura de venta. Agrégalo con **Nuevo Ingreso** y sube su respaldo. Mientras un ingreso esté pendiente puedes editarlo o eliminarlo. Para los **Gastos**, mira [Respalda un pago sin factura](/app/respaldar-pago-sin-factura).
+
+Para elegir el movimiento paso a paso, ve a [Concilia a mano](/app/concilia-a-mano).
+
+## Problemas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Dice «No hay documentos aún»">
+    El registro todavía no tiene facturas. Con una pestaña elegida dice «No hay documentos con este estado»: haz clic en **Todos**.
+  </Accordion>
+  <Accordion title="No puedo editar un ingreso">
+    Un ingreso conciliado no se edita ni se elimina. Desconcílialo primero desde **Bancos y movimientos**.
+  </Accordion>
+</AccordionGroup>

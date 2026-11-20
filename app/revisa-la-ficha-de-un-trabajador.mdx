@@ -1,0 +1,51 @@
+---
+title: "Revisa la ficha de un trabajador"
+description: "Busca a una persona de tu equipo, mira su último sueldo, sus liquidaciones, sus vacaciones y sus documentos, y sube o descarga archivos."
+icon: "id-card"
+iconType: "light"
+keywords: ["empleados", "ficha del trabajador", "último sueldo", "liquidaciones", "vacaciones", "documentos del trabajador", "asignar usuario", "dotación", "antigüedad"]
+pantallas: ["/hr/employees", "/hr/employees/:id/last-pay-stub", "/hr/employees/:id/pay-stubs", "/hr/employees/:id/pay-stubs/:stubId", "/hr/employees/:id/vacations", "/hr/employees/:id/documents"]
+app_al: "2026-11-19"
+---
+
+Desde **Empleados** encuentras a cada persona de tu equipo y abres su ficha, donde ves sus liquidaciones, sus vacaciones y sus documentos.
+
+<Info>
+  Esta pantalla es de **Laboral**: la ven los administradores y las personas con el permiso **Laboral**. Asignar un usuario a un trabajador pide además el permiso **Usuarios**. Para que tus trabajadores vean su propia información, revisa [Da acceso a tus trabajadores](/app/da-acceso-a-tus-trabajadores).
+</Info>
+
+<Steps>
+  <Step title="Busca a la persona">
+    En **Gestión › Laboral**, abre la pestaña **Empleados**. Arriba hay cuatro tarjetas: **Dotación**, **Nuevas contrataciones**, **Antigüedad promedio** y **Sueldo base promedio**. Más abajo, la tabla trae el filtro **Todos**, **Activos** o **Inactivos** (parte en **Activos**) y el buscador **Busca por nombre…**. Puedes ordenar por **Nombre**, **Cargo**, **Área**, **Email**, **Sueldo Base** y **Estado**.
+  </Step>
+  <Step title="Abre la ficha">
+    Haz clic en el nombre. Arriba ves su **Cargo**, **Área**, **Email** y **Teléfono**, y cuatro pestañas: **Último Sueldo**, **Liquidaciones**, **Vacaciones** y **Documentos**.
+  </Step>
+  <Step title="Revisa sus sueldos">
+    **Último Sueldo** muestra **Composición de último sueldo (resumen)**, el gráfico **Evolución de sueldo líquido** y los cuadros **Haberes** y **Descuentos**. En **Liquidaciones** hay una fila por mes: haz clic en el ojo (**Ver detalle**) para abrir el mes, o en el ícono de descarga para bajar el PDF. En el detalle, **Descargar** baja el mismo PDF y **Volver a Liquidaciones** te devuelve a la lista.
+  </Step>
+  <Step title="Mira vacaciones y documentos">
+    **Vacaciones** muestra **Vacaciones Disponibles**, las **Vacaciones tomadas** y los **Próximos feriados en Chile**. En **Documentos**, haz clic en **Agregar Documento**, escribe el nombre, elige el **Archivo** y confirma con **Subir Documento**.
+  </Step>
+</Steps>
+
+## Qué puedes cambiar
+
+La ficha es de consulta: las liquidaciones y las vacaciones solo se leen. En **Documentos** puedes **Renombrar** y **Eliminar** los archivos que subiste tú. En la tabla de **Empleados**, quien tiene el permiso **Usuarios** ve un menú de tres puntos con **Asignar usuario** o **Cambiar usuario asignado**.
+
+## Problemas frecuentes
+
+<AccordionGroup>
+  <Accordion title="Veo «Sin liquidación disponible»">
+    Esa persona todavía no tiene liquidaciones cargadas. Lo mismo pasa con **Sin registros de vacaciones.** en la pestaña **Vacaciones**.
+  </Accordion>
+  <Accordion title="No veo el ícono de descarga en un mes">
+    Ese mes no tiene PDF cargado todavía.
+  </Accordion>
+  <Accordion title="No encuentro a alguien">
+    Cambia el filtro a **Todos** o **Inactivos**: la tabla parte mostrando solo a los **Activos**.
+  </Accordion>
+  <Accordion title="No puedo renombrar o eliminar un documento">
+    Solo se pueden modificar los documentos que subiste tú. Los demás se descargan o se abren.
+  </Accordion>
+</AccordionGroup>

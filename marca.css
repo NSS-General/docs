@@ -3,3 +3,8 @@
 #content h1, #content h2, #content h3, #content h4 {
   font-weight: 500 !important;
 }
+
+/* Tarjetas con radio de 8px, igual que en nss.cl (Mintlify las trae en 16px) */
+.card {
+  border-radius: 8px !important;
+}
