@@ -45,14 +45,77 @@
             ]
           },
           {
+            "group": "NSS AI",
+            "public": true,
+            "pages": [
+              "app/pregunta-a-nss-ai"
+            ]
+          },
+          {
             "group": "Conciliador",
             "public": true,
             "pages": [
               "app/conoce-el-conciliador",
               "app/conectar-banco-fintoc",
+              "app/importa-una-cartola",
               "app/concilia-con-sugerencias",
               "app/concilia-a-mano",
+              "app/revisa-tus-cuentas-por-cobrar-y-por-pagar",
               "app/respaldar-pago-sin-factura"
+            ]
+          },
+          {
+            "group": "Impuestos",
+            "public": true,
+            "pages": [
+              "app/revisa-tu-f29",
+              "app/revisa-tu-previred-y-formulario-50",
+              "app/revisa-tus-impuestos-anuales",
+              "app/revisa-tus-patentes-municipales"
+            ]
+          },
+          {
+            "group": "Laboral",
+            "public": true,
+            "pages": [
+              "app/revisa-el-resumen-de-laboral",
+              "app/revisa-la-ficha-de-un-trabajador",
+              "app/revisa-las-liquidaciones-de-tu-empresa",
+              "app/revisa-las-vacaciones-de-tu-equipo",
+              "app/revisa-tus-avisos-de-prevision"
+            ]
+          },
+          {
+            "group": "Empresa",
+            "public": true,
+            "pages": [
+              "app/revisa-el-capital-de-tu-empresa",
+              "app/revisa-tu-correspondencia"
+            ]
+          },
+          {
+            "group": "Documentos",
+            "public": true,
+            "pages": [
+              "app/descarga-un-documento"
+            ]
+          },
+          {
+            "group": "Mi información laboral",
+            "public": true,
+            "pages": [
+              "app/entra-a-mi-informacion-laboral",
+              "app/revisa-tu-liquidacion",
+              "app/mira-tus-vacaciones-y-documentos"
+            ]
+          },
+          {
+            "group": "Configuración",
+            "public": true,
+            "pages": [
+              "app/paga-tu-factura-de-nss",
+              "app/invita-a-tu-equipo",
+              "app/da-acceso-a-tus-trabajadores"
             ]
           }
         ]
